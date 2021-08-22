@@ -32,10 +32,10 @@ def cat_command(update: Update, context: CallbackContext) -> None:
     """Send a message when the command /help is issued."""
     update.message.reply_text('cat! '+update.message.text)
     # f = open('/Users/mac/Documents/work/python/own-finances-bot/python-telegram-bot/log_bot.txt', 'w')
-    f = open('log_bot.txt', 'w')
-    f.write(update.message.text)
-    f.write(' \n')
-    f.close()
+    # f = open('log_bot.txt', 'w')
+    # f.write(update.message.text)
+    # f.write(' \n')
+    # f.close()
 
 
 

@@ -6,11 +6,11 @@ import datetime
 
 
 # Enable logging
-# logging.basicConfig(
-#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
-# )
+logging.basicConfig(
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO
+)
 
-# logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 
 # Define a few command handlers. These usually take the two arguments update and
@@ -24,24 +24,24 @@ def start(update: Update, context: CallbackContext) -> None:
     )
 
 
-# def help_command(update: Update, context: CallbackContext) -> None:
-#     """Send a message when the command /help is issued."""
-#     update.message.reply_text('Help!')
+def help_command(update: Update, context: CallbackContext) -> None:
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('Help!')
 
-# def cat_command(update: Update, context: CallbackContext) -> None:
-#     """Send a message when the command /help is issued."""
-#     update.message.reply_text('cat! '+update.message.text)
-#     # f = open('/Users/mac/Documents/work/python/own-finances-bot/python-telegram-bot/log_bot.txt', 'w')
-#     f = open('log_bot.txt', 'w')
-#     f.write(update.message.text)
-#     f.write(' \n')
-#     f.close()
+def cat_command(update: Update, context: CallbackContext) -> None:
+    """Send a message when the command /help is issued."""
+    update.message.reply_text('cat! '+update.message.text)
+    # f = open('/Users/mac/Documents/work/python/own-finances-bot/python-telegram-bot/log_bot.txt', 'w')
+    f = open('log_bot.txt', 'w')
+    f.write(update.message.text)
+    f.write(' \n')
+    f.close()
 
 
 
-# def echo(update: Update, context: CallbackContext) -> None:
-#     """Echo the user message."""
-#     update.message.reply_text(update.message.text)
+def echo(update: Update, context: CallbackContext) -> None:
+    """Echo the user message."""
+    update.message.reply_text(update.message.text)
 
 
 def main() -> None:
@@ -54,11 +54,11 @@ def main() -> None:
 
     # on different commands - answer in Telegram
     dispatcher.add_handler(CommandHandler("start", start))
-    # dispatcher.add_handler(CommandHandler("help", help_command))
-    # dispatcher.add_handler(CommandHandler("cat", cat_command))
+    dispatcher.add_handler(CommandHandler("help", help_command))
+    dispatcher.add_handler(CommandHandler("cat", cat_command))
 
     # on non command i.e message - echo the message on Telegram
-    # dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))
+    dispatcher.add_handler(MessageHandler(Filters.text & ~Filters.command, echo))
 
     # Start the Bot
     updater.start_polling()
@@ -70,4 +70,4 @@ def main() -> None:
 
 
 if __name__ == '__main__':
-    main()      
+    main()

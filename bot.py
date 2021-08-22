@@ -48,7 +48,7 @@ def total_costs(lst):
     print(total_dict)
     return total_dict
 
-# Старт
+# Старт1
 @dp.message_handler(commands=['start'])
 async def process_start_command(message: types.Message):
     string = '''<b>Ты подключился к боту управляния личными финанасми</b>

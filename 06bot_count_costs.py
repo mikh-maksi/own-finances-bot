@@ -16,7 +16,7 @@ def costs(update, context):
 def echo(update, context):
     update.message.reply_text(update.message.text)
 
-updater = Updater("1958845613:AAF48B3sKwrn-ggwr8LxGdYiygpyePLBs9I")
+updater = Updater("")
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler("start", start))

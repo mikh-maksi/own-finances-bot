@@ -7,7 +7,7 @@ def start(update, context):
 def echo(update, context):
     update.message.reply_text(update.message.text)
 
-updater = Updater("1369610345:AAHq-1NZ7ytIj08OfUTBmToedNPoh_AHiIA")
+updater = Updater("")
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler("start", start))

@@ -1,7 +1,3 @@
-# import pathlib
-
-# path = pathlib.Path(__file__).parent.absolute()
-# path = str(path) + '/categ_list.txt'
 categ_list = ['eat','ent','coffee','transport', 'sport', 'clothers','other']
 string_out = ' '.join(categ_list)
 f = open('categ_list.txt','w')

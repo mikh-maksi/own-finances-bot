@@ -8,7 +8,7 @@ def start(update, context):
     f.close()
     
     chat = update.effective_chat
-    context.bot.send_message(chat_id=chat.id, text="Hello! This own finances bot.")
+    context.bot.send_message(chat_id=chat.id, text="Hello! This is own finances bot.")
 
 def cat (update, context):
     f = open('categ_list.txt','r')

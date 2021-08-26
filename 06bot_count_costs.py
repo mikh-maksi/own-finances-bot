@@ -2,7 +2,7 @@ from telegram.ext import Updater, MessageHandler, Filters, CommandHandler
 
 def start(update, context):
     chat = update.effective_chat
-    context.bot.send_message(chat_id=chat.id, text="Hello! This home finance bot.")
+    context.bot.send_message(chat_id=chat.id, text="Hello! This is own finances bot.")
 
 def costs(update, context):
 

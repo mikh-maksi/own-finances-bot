@@ -12,6 +12,23 @@ def cat_list_value():
     else:
         return []
 
+def total(update, context):
+    total_dict = dict.fromkeys(cat_list_value(),0)
+
+    fin_list = []
+    f = open('costs_list.txt','r')
+    for line in f:
+        elements = line.split(' ')
+        lst = [elements[0][1:],int(elements[1])]
+        fin_list.append(lst)
+
+    for lst in fin_list:
+        total_dict[lst[0]] = total_dict[lst[0]] + lst[1]
+
+    chat = update.effective_chat
+    context.bot.send_message(chat_id=chat.id, text=str(total_dict))
+
+
 def costs_list(update, context):
     f = open('costs_list.txt','r')
     string = ''
@@ -76,6 +93,8 @@ dispatcher.add_handler(CommandHandler(cat_list_value(), costs))
 dispatcher.add_handler(CommandHandler("cat", cat))
 dispatcher.add_handler(CommandHandler("addcat", addcat))
 dispatcher.add_handler(CommandHandler("costs", costs_list))
+dispatcher.add_handler(CommandHandler("total", total))
+
 
 dispatcher.add_handler(MessageHandler(Filters.all, echo))
 

@@ -22,7 +22,7 @@ def echo(update, context):
             string += line
         chat = update.effective_chat
         context.bot.send_message(chat_id=chat.id, text=string)
-updater = Updater("2014714331:AAG5HQXZIaf_XyC2dx8OiUfp8WbtBdZNgGk")
+updater = Updater("")
 
 dispatcher = updater.dispatcher
 

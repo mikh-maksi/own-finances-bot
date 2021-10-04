@@ -50,7 +50,7 @@ def echo(update, context):
 
     update.message.reply_text(string_out)
 
-updater = Updater("2014714331:AAG5HQXZIaf_XyC2dx8OiUfp8WbtBdZNgGk")
+updater = Updater("")
 
 dispatcher = updater.dispatcher
 

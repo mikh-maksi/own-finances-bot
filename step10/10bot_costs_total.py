@@ -77,6 +77,7 @@ def costs(update, context):
     
     f = open('costs_list.txt','a')
     f.write(string+'\n')
+    print(string)
     f.close()
 
     chat = update.effective_chat

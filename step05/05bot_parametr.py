@@ -20,7 +20,7 @@ updater = Updater("")
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(CommandHandler("start", start))
-dispatcher.add_handler(CommandHandler("eat", costs))
+dispatcher.add_handler(CommandHandler("costs", costs))
 dispatcher.add_handler(MessageHandler(Filters.all, echo))
 
 updater.start_polling()
